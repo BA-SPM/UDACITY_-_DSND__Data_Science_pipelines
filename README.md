@@ -3,7 +3,62 @@
 This repository demonstrates building reproducible data science pipelines for text-based classification tasks. The included Jupyter notebook (`starter/starter.ipynb`) walks through data loading, preprocessing, feature engineering (TF-IDF + text features), model training and tuning, evaluation (accuracy, AUC, confusion matrix), and saving reusable pipelines to the `models/` folder.
 
 **This project is completly done in a Jupyter notebook (`starter/starter.ipynb`) to show the project fullfillment.**
-**Next steps would include to refactor the code and create dedicated `*.py`-files.**   
+**Next steps would include to refactor the code and create dedicated `*.py`-files.**
+
+## Summary of the Project
+
+This README provides an expanded project overview and a clear map of the repository to help reproduce experiments and reuse components. The project demonstrates how to build end-to-end, reproducible text-classification pipelines implemented step-by-step in a Jupyter notebook (`starter/starter.ipynb`). 
+
+Key stages covered by the notebook include 
+- data loading and cleaning, 
+- exploratory data analysis, 
+- text preprocessing (tokenization, stopwords handling, optional lemmatization), 
+- TF‑IDF feature engineering, 
+- encoding and scaling of non-text features, 
+- model selection and cross-validated hyperparameter tuning, 
+- final evaluation (confusion matrix, ROC/AUC, precision/recall), and 
+- exporting production-ready pipelines (`*.joblib`). 
+
+Artifacts and supporting files (trained pipelines, requirement lists, and example data) are provided in the `models/`, project root, and `starter/data/` folders to facilitate reproducibility and quick re-runs.
+
+### General workflow in the notebook:
+
+- Data exploration
+- Building the pipeline (step-by-step)
+- Training the pipeline (step-by-step)
+- Training pipeline (full-scale)
+- Fine-tuning the pipeline
+
+## Files in the Repository
+
+- `starter/`: Contains the Jupyter notebook (`starter.ipynb`), a README and the `data/` folder used by the notebook.
+- `data/reviews.csv`: The raw dataset of reviews used for training and evaluation.
+- `models/`: Saved pipeline artifacts (`*.joblib`) produced by the notebook training cells.
+- `PROJECT_requirements.txt`, `STARTER_requirements.txt`: Dependency lists for reproducing the environment used in the project and the notebook.
+- `README.md`, `LICENSE.txt`, `CODEOWNERS`: Project documentation, license and repository ownership metadata.
+- `starter/README.md`: Notebook-specific notes and instructions.
+
+### Graphical Repository Structure
+
+Below is a simple visualization of the repository layout:
+
+```
+Project Root
+|- starter/
+|  |- data/
+|     |- reviews.csv                 <-- Data
+|  |- models/
+|     |- pipeline_base_*.joblib         <-- Saved base model before finetuning 
+|     |- pipeline_finetuned_*.joblib    <-- Saved finetuned model ready for production
+|  |- README.md
+|  |- starter.ipynb                  <-- Main File
+|- CODEOWNERS
+|- LICENSE.txt
+|- PROJECT_requirements.txt          <-- Required dependencies used in this project
+|- README.md                         <-- This document
+|- STARTER_requirements.txt
+```
+
 
 ## Getting Started
 
